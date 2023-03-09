@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     console.log(data)
                 for (const breed in data.message) {
                     let x = document.createElement("button")
+                    x.setAttribute("id" , "bttn")
                     x.innerHTML = breed
                     let listItem = document.createElement('li')
                     listItem.append(x)
@@ -29,9 +30,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
             fetch(`https://dog.ceo/api/breed/${dog}/images/random`)
             .then((response) => response.json())
             .then((data) => {
-                let breedPics = document.createElement("img")
-                breedPics.setAttribute("src", data.message)
-                document.getElementById("body").append(breedPics)  
+                const breedPics = document.getElementById("dogs")
+                breedPics.setAttribute("src", data.message) 
             })
         }
+
+    let post = document.getElementById("post");
+    post.addEventListener("click", function () {
+      let commentBoxValue = document.getElementById("comment-box").value;
+    
+      let li = document.createElement("li");
+      let text = document.createTextNode(commentBoxValue);
+      li.appendChild(text);
+      document.getElementById("unordered").appendChild(li);
+    });
     })
