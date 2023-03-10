@@ -47,6 +47,24 @@ body {
     color: white;
 }
 
-#post {
+#like-button {
+    cursor: pointer;
+    width: auto;
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+}
 
+#like-button:hover {
+    background-color: rgb(21, 21, 155);
+    color: white;
+}
+
+#comment-box {
+  display: grid;
+  margin: auto;  
+}
+
+#unordered-list {
+    background-color: azure;
 }
